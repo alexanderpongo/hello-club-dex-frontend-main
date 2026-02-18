@@ -1,0 +1,500 @@
+import { localChain } from "@/constants/LocalChain";
+import { SuggestedTokenConfigType, TokenType } from "@/interfaces/index.i";
+import { base, bsc, bscTestnet, mainnet, polygon } from "viem/chains";
+
+export const bscTestTokens: TokenType[] = [
+  {
+    chainId: 97,
+    name: "TBNB",
+    symbol: "TBNB",
+    address: "native",
+    decimals: 18,
+    logoURI:
+      "https://cdn.iconscout.com/icon/premium/png-256-thumb/wrapped-bnb-wbnb-7152414-5795245.png?f=webp",
+  },
+  // {
+  //   id: 4,
+  //   chainId: 56,
+  //   name: "tether",
+  //   symbol: "USDT",
+  //   address: "0x55d398326f99059fF775485246999027B3197955",
+  //   decimals: 18,
+  //   logoURI: "https://cryptologos.cc/logos/tether-usdt-logo.svg",
+  // },
+  // {
+  //   id: 5,
+  //   chainId: 56,
+  //   name: "ethereum",
+  //   symbol: "ETH",
+  //   address: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+  //   decimals: 18,
+  //   logoURI: "https://cryptologos.cc/logos/ethereum-eth-logo.svg",
+  // },
+  // {
+  //   id: 7,
+  //   chainId: 56,
+  //   name: "binance-bitcoin",
+  //   symbol: "BTC",
+  //   address: "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+  //   decimals: 8,
+  //   logoURI: "https://cryptologos.cc/logos/bitcoin-btc-logo.svg",
+  // },
+  {
+    chainId: 97,
+    name: "HELL1",
+    symbol: "HELL1",
+    address: "0x0A23b4EB2233cCed50a3001A189531e6B1DEbFFa",
+    decimals: 18,
+    logoURI: "/icons/h1.jpg",
+  },
+  {
+    chainId: 97,
+    name: "HELL2",
+    symbol: "HELL2",
+    address: "0x40ceD14aC82002dE4652f99C8f5592b388D08a92",
+    decimals: 18,
+    logoURI: "/icons/h2.jpg",
+  },
+
+  // {
+  //   address: "0xab1a4d4f1d656d2450692d237fdd6c7f9146e814",
+  //   chainId: 97,
+  //   decimals: 18,
+  //   logoURI: "https://cryptologos.cc/logos/binance-usd-busd-logo.svg",
+  //   name: "BUSD",
+  //   symbol: "TBUSD", //0xD0b20C4C8ba7858E51BFA4aeE3048251fB51A48a
+  // },
+  {
+    address: "0xD0b20C4C8ba7858E51BFA4aeE3048251fB51A48a",
+    chainId: 97,
+    decimals: 18,
+    logoURI: "/icons/h1.jpg",
+    name: "Brett Token",
+    symbol: "BRETT",
+  },
+  {
+    address: "0x51Dd9D697Da0E2AEfb0F341Dc6E1d73ad416AD2e",
+    chainId: 97,
+    decimals: 18,
+    logoURI: "/icons/h2.jpg",
+    name: "Floki Token",
+    symbol: "FLOKI",
+  },
+  {
+    address: "0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd",
+    chainId: 97,
+    decimals: 18,
+    logoURI:
+      "https://cdn.iconscout.com/icon/premium/png-256-thumb/wrapped-bnb-wbnb-7152414-5795245.png?f=webp",
+    name: "WBNB",
+    symbol: "WBNB",
+  },
+  // {
+  //   address: "0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee",
+  //   chainId: 97,
+  //   decimals: 18,
+  //   logoURI: "https://bscscan.com/token/images/busd_32_2.png",
+  //   name: "Binance USD",
+  //   symbol: "BUSD",
+  // },
+  {
+    address: "0x337610d27c682E347C9cD60BD4b3b107C9d34dDd",
+    chainId: 97,
+    decimals: 18,
+    logoURI: "https://bscscan.com/token/images/usdtzs_32.png",
+    name: "USDT Token",
+    symbol: "USDT",
+  },
+  // {
+  //   address: "0x87AbE5F58eD43564584A547E00012a64ADc96A85",
+  //   chainId: 97,
+  //   decimals: 18,
+  //   logoURI: "/icons/lets.png",
+  //   name: "LETS Token",
+  //   symbol: "LETS",
+  // },
+  // {
+  //   address: "0x5aCE702e8C7901c67B6587F26b488a865a33d4Af",
+  //   chainId: 97,
+  //   decimals: 18,
+  //   logoURI: "/icons/gets.png",
+  //   name: "GETS Token",
+  //   symbol: "GETS",
+  // },
+];
+
+export const mainnetTokens: TokenType[] = [
+  {
+    id: 1,
+    chainId: 1,
+    name: "Hello",
+    symbol: "HELLO",
+    address: "0x411099C0b413f4fedDb10Edf6a8be63BD321311C",
+    decimals: 18,
+    logoURI: "/icons/hello.svg",
+  },
+  {
+    id: 2,
+    chainId: 1,
+    name: "ethereum",
+    symbol: "ETH",
+    address: "native",
+    decimals: 18,
+    logoURI: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
+  },
+  {
+    id: 3,
+    chainId: 1,
+    name: "tether",
+    symbol: "USDT",
+    address: "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+    decimals: 6,
+    logoURI: "https://assets.coingecko.com/coins/images/325/small/Tether.png",
+  },
+  // {
+  //   id: 4,
+  //   chainId: 1,
+  //   name: "bnb",
+  //   symbol: "BNB",
+  //   address: "0xB8c77482e45F1F44dE1745F52C74426C631bDD52",
+  //   decimals: 18,
+  //   logoURI:
+  //     "https://assets.coingecko.com/coins/images/825/small/bnb-icon2_2x.png",
+  // },
+  {
+    id: 5,
+    chainId: 1,
+    name: "usd-coin",
+    symbol: "USDC",
+    address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+    decimals: 6,
+    logoURI: "https://assets.coingecko.com/coins/images/6319/small/usdc.png",
+  },
+  {
+    id: 6,
+    chainId: 1,
+    name: "staked-ether",
+    symbol: "stETH",
+    address: "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/13442/small/steth_logo.png",
+  },
+  {
+    id: 7,
+    chainId: 1,
+    name: "wrapped-liquid-staked-ether-2-0",
+    symbol: "wstETH",
+    address: "0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0",
+    decimals: 18,
+    logoURI: "https://assets.coingecko.com/coins/images/18834/small/wstETH.png",
+  },
+  {
+    id: 8,
+    chainId: 1,
+    name: "chainlink",
+    symbol: "ChainLink",
+    address: "0x514910771AF9Ca656af840dff83E8264EcF986CA",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/877/small/chainlink-new-logo.png",
+  },
+  {
+    id: 9,
+    chainId: 1,
+    name: "wrapped-ether",
+    symbol: "WETH",
+    address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+    decimals: 18,
+    logoURI: "https://assets.coingecko.com/coins/images/2518/small/weth.png",
+  },
+  {
+    id: 10,
+    chainId: 1,
+    name: "wrapped-bitcoin",
+    symbol: "WBTC",
+    address: "0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599",
+    decimals: 8,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/7598/standard/wrapped_bitcoin_wbtc.png?1696507857",
+  },
+];
+
+// export const localTestTokens: TokenType[] = [
+//   {
+//     id: 1,
+//     chainId: 1,
+//     name: "Dai Stablecoin",
+//     symbol: "DAI",
+//     address: "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+//     decimals: 18,
+//     logoURI: "https://polygonscan.com/token/images/mcdDai_32.png",
+//   },
+//   {
+//     id: 2,
+//     chainId: 1,
+//     name: "USD Coin",
+//     symbol: "USDC",
+//     address: "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+//     decimals: 6,
+//     logoURI: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg",
+//   },
+//   {
+//     id: 3,
+//     chainId: 1337,
+//     name: "Wrapped TEther",
+//     symbol: "WTETH",
+//     address: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+//     decimals: 18,
+//     logoURI: "",
+//   },
+// ];
+
+export const bscTokens: TokenType[] = [
+  {
+    id: 1,
+    chainId: 56,
+    name: "binance coin",
+    symbol: "BNB",
+    address: "native",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/12591/thumb/binance-coin-logo.png?1696512401",
+  },
+  {
+    name: "HELLO",
+    symbol: "HELLO",
+    address: "0x0F1cBEd8EFa0E012AdbCCB1638D0aB0147D5Ac00",
+    chainId: 56,
+    decimals: 18,
+    logoURI: "/icons/hello.svg",
+  },
+  {
+    name: "Wrapped BNB",
+    symbol: "BNB",
+    address: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
+    chainId: 56,
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/12591/thumb/binance-coin-logo.png?1696512401",
+  },
+  {
+    id: 2,
+    chainId: 56,
+    name: "dai",
+    symbol: "DAI",
+    address: "0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/39784/thumb/dai.png?1724109857",
+  },
+  {
+    id: 3,
+    chainId: 56,
+    name: "usd-coin",
+    symbol: "USDC",
+    address: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/6319/thumb/usdc.png?1696506694",
+  },
+  {
+    id: 4,
+    chainId: 56,
+    name: "tether",
+    symbol: "USDT",
+    address: "0x55d398326f99059fF775485246999027B3197955",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/35021/thumb/USDT.png?1707233575",
+  },
+  {
+    id: 5,
+    chainId: 56,
+    name: "ethereum",
+    symbol: "ETH",
+    address: "0x2170Ed0880ac9A755fd29B2688956BD959F933F8",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/39580/thumb/weth.png?1723006716",
+  },
+  // {
+  //   id: 6,
+  //   chainId: 56,
+  //   name: "binance-usd",
+  //   symbol: "BUSD",
+  //   address: "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56",
+  //   decimals: 18,
+  //   logoURI:
+  //     "https://assets.coingecko.com/coins/images/31273/thumb/new_binance-peg-busd.png?1696530096",
+  // },
+  {
+    id: 7,
+    chainId: 56,
+    name: "binance-bitcoin",
+    symbol: "BTC",
+    address: "0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c",
+    decimals: 8,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/14108/thumb/Binance-bitcoin.png?1696513829",
+  },
+];
+
+export const polygonTokens: TokenType[] = [
+  {
+    id: 1,
+    chainId: 137,
+    name: "matic-network",
+    symbol: "MATIC",
+    address: "native",
+    decimals: 18,
+    logoURI: "https://cryptologos.cc/logos/polygon-matic-logo.svg",
+  },
+  {
+    id: 2,
+    chainId: 137,
+    name: "usd-coin",
+    symbol: "USDC",
+    address: "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359",
+    decimals: 6,
+    logoURI: "https://cryptologos.cc/logos/usd-coin-usdc-logo.svg",
+  },
+  {
+    id: 3,
+    chainId: 137,
+    name: "dai",
+    symbol: "DAI",
+    address: "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063",
+    decimals: 18,
+    logoURI: "https://polygonscan.com/token/images/mcdDai_32.png",
+  },
+  {
+    id: 4,
+    chainId: 137,
+    name: "tether",
+    symbol: "USDT",
+    address: "0xc2132D05D31c914a87C6611C10748AEb04B58e8F",
+    decimals: 6,
+    logoURI: "https://cryptologos.cc/logos/tether-usdt-logo.svg",
+  },
+  {
+    id: 5,
+    chainId: 137,
+    name: "wrapped-bitcoin",
+    symbol: "WBTC",
+    address: "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6",
+    decimals: 8,
+    logoURI: "https://cryptologos.cc/logos/wrapped-bitcoin-wbtc-logo.svg",
+  },
+];
+
+export const baseTokens: TokenType[] = [
+  {
+    id: 1,
+    chainId: 8453,
+    name: "ethereum",
+    symbol: "ETH",
+    address: "native",
+    decimals: 18,
+    logoURI: "https://assets.coingecko.com/coins/images/279/small/ethereum.png",
+  },
+  {
+    id: 2,
+    chainId: 8453,
+    name: "usd-coin",
+    symbol: "USDC",
+    address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+    decimals: 6,
+    logoURI: "https://assets.coingecko.com/coins/images/6319/small/usdc.png",
+  },
+  {
+    id: 3,
+    chainId: 8453,
+    name: "wrapped-liquid-staked-ether-2-0",
+    symbol: "wstETH",
+    address: "0xc1CBa3fCea344f92D9239c08C0568f6F2F0ee452",
+    decimals: 18,
+    logoURI: "https://assets.coingecko.com/coins/images/18834/small/wstETH.png",
+  },
+  {
+    id: 4,
+    chainId: 8453,
+    name: "wrapped-bitcoin",
+    symbol: "WBTC",
+    address: "0x0555E30da8f98308EdB960aa94C0Db47230d2B9c",
+    decimals: 8,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/7598/small/wrapped_bitcoin_wbtc.png",
+  },
+  {
+    id: 5,
+    chainId: 8453,
+    name: "usd-base-coin",
+    symbol: "USDe",
+    address: "0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34",
+    decimals: 6,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/33613/standard/usde.png?1733810059",
+  },
+  {
+    id: 6,
+    chainId: 8453,
+    name: "wrapped-eeth",
+    symbol: "weETH",
+    address: "0x04C0599Ae5A44757c0af6F9eC3b93da8976c150A",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/33033/standard/weETH.png?1701438396",
+  },
+  {
+    id: 7,
+    chainId: 8453,
+    name: "wrapped-ether",
+    symbol: "WETH",
+    address: "0x4200000000000000000000000000000000000006",
+    decimals: 18,
+    logoURI: "https://assets.coingecko.com/coins/images/2518/small/weth.png",
+  },
+
+  {
+    id: 8,
+    chainId: 8453,
+    name: "usds-stablecoin",
+    symbol: "USDS",
+    address: "0x820C137fa70C8691f0e44Dc420a5e53c168921Dc",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/39926/standard/usds.webp?1726666683",
+  },
+
+  {
+    id: 10,
+    chainId: 8453,
+    name: "staked-usdbc",
+    symbol: "sUSDb",
+    address: "0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2",
+    decimals: 6,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/33669/standard/sUSDe-Symbol-Color.png?1716307680",
+  },
+  {
+    id: 11,
+    chainId: 8453,
+    name: "dai",
+    symbol: "DAI",
+    address: "0x50c5725949A6F0c72E6C4a641F24049A917DB0Cb",
+    decimals: 18,
+    logoURI:
+      "https://assets.coingecko.com/coins/images/9956/small/dai-multi-collateral-mcd.png",
+  },
+];
+
+export const suggestedToken: SuggestedTokenConfigType = {
+  [mainnet.id]: mainnetTokens,
+  [bsc.id]: bscTokens,
+  [polygon.id]: polygonTokens,
+  [base.id]: baseTokens,
+  [bscTestnet.id]: bscTestTokens,
+  // [localChain.id]: localTestTokens,
+  ["default"]: [],
+};

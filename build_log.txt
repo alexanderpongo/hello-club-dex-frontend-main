@@ -1,0 +1,69 @@
+
+> hello-club-platform-frontend@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/app/globals.css': No serializer registered for PostCSSSyntaxError
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> webpack/lib/ModuleBuildError -> PostCSSSyntaxError
+Failed to compile.
+
+./app/globals.css:50:5
+Syntax error: /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/app/globals.css The `dark:border-[rgba(255,` class does not exist. If `dark:border-[rgba(255,` is a custom class, make sure it is defined within a `@layer` directive.
+
+  48 | 
+  49 |   .card-primary {
+> 50 |     @apply dark:bg-[#121212] bg-slate-100 border border-black/10 dark:border-[rgba(255, 255, 255, 0.03)];
+     |     ^
+  51 |   }
+  52 |
+
+./app/globals.css
+Syntax error: /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/app/globals.css The `dark:border-[rgba(255,` class does not exist. If `dark:border-[rgba(255,` is a custom class, make sure it is defined within a `@layer` directive. (50:5)
+
+  48 | 
+  49 |   .card-primary {
+> 50 |     @apply dark:bg-[#121212] bg-slate-100 border border-black/10 dark:border-[rgba(255, 255, 255, 0.03)];
+     |     ^
+  51 |   }
+  52 | 
+
+    at tryRunOrWebpackError (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:312989)
+    at __webpack_require_module__ (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+    at done (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/neo-async/async.js:1:14824)
+    at Hook.eval [as callAsync] (eval at create (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:13:28858), <anonymous>:15:1)
+    at Hook.CALL_ASYNC_DELEGATE [as _callAsync] (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:13:26012)
+    at /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:130328
+    at symbolIterator (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/neo-async/async.js:1:14402)
+-- inner error --
+Syntax error: /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/app/globals.css The `dark:border-[rgba(255,` class does not exist. If `dark:border-[rgba(255,` is a custom class, make sure it is defined within a `@layer` directive. (50:5)
+
+  48 | 
+  49 |   .card-primary {
+> 50 |     @apply dark:bg-[#121212] bg-slate-100 border border-black/10 dark:border-[rgba(255, 255, 255, 0.03)];
+     |     ^
+  51 |   }
+  52 | 
+
+    at Object.<anonymous> (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/app/globals.css:1:7)
+    at /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:922493
+    at Hook.eval [as call] (eval at create (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:13:28636), <anonymous>:7:1)
+    at Hook.CALL_DELEGATE [as _call] (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:13:25906)
+    at /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:131198
+    at tryRunOrWebpackError (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:312943)
+    at __webpack_require_module__ (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:131165)
+    at __nested_webpack_require_153728__ (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:130607)
+    at /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/webpack/bundle5.js:28:131454
+    at symbolIterator (/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/compiled/neo-async/async.js:1:14444)
+
+Generated code for /Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!/Users/alexanderpongo/Documents/workspace/hello-club-dex-frontend-main/app/globals.css
+
+Import trace for requested module:
+./app/globals.css
+
+
+> Build failed because of webpack errors

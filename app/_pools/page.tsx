@@ -1,0 +1,156 @@
+"use client";
+// import { Metadata } from "next";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import SwapWidget from "@/components/evm/SwapWidget";
+import LPView from "@/components/evm/lp/LPView";
+import PoolsView from "@/components/evm/pools/PoolsView";
+import HomeBg from "@/components/HomeBg";
+import Navbar from "@/components/layout/Navbar";
+import { OnboardingModal } from "@/components/evm/OnboardingModal";
+import { Suspense, useState, useEffect } from "react";
+import { useLPStore, useSwapStore } from "@/store/useDexStore";
+import { useRouter } from "next/navigation";
+
+// export const metadata: Metadata = {
+//   description:
+//     "This is your exclusive invitation to Hello Club—where you gain direct access to Killer Whales, premium investment opportunities, and a thriving Web3 community. Together, we’re shaping the future of decentralized wealth—for holders, founders, and projects alike. Sign up, lock your tokens, and start earning from our reward pool.",
+//   twitter: {
+//     description:
+//       "This is your exclusive invitation to Hello Club—where you gain direct access to Killer Whales, premium investment opportunities, and a thriving Web3 community. Together, we’re shaping the future of decentralized wealth—for holders, founders, and projects alike. Sign up, lock your tokens, and start earning from our reward pool.",
+//   },
+//   openGraph: {
+//     description:
+//       "This is your exclusive invitation to Hello Club—where you gain direct access to Killer Whales, premium investment opportunities, and a thriving Web3 community. Together, we’re shaping the future of decentralized wealth—for holders, founders, and projects alike. Sign up, lock your tokens, and start earning from our reward pool.",
+//   },
+// };
+
+export default function PoolsPage() {
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState("pool");
+
+  const {
+    setActiveStep,
+    setFromLPToken,
+    setToLPToken,
+    setLpAddingSuccess,
+    setFromLPTokenInputAmount,
+    setToLPTokenInputAmount,
+    setFeeTier,
+    setActivePriceRange,
+    setTickLowerPrice,
+    setTickUpperPrice,
+    setTickSpace,
+  } = useLPStore();
+
+  const {
+    setFromToken,
+    setToToken,
+    setFromTokenBalance,
+    setToTokenInputAmount,
+    setFromTokenInputAmount,
+    setToTokenBalance,
+  } = useSwapStore();
+
+  // Handle tab changes with navigation
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+
+    // Redirect to main page for trade and lp tabs
+    if (value === "trade" || value === "lp") {
+      router.push(`/?tab=${value}`, { scroll: false });
+    }
+    // Keep pool tab on current page
+  };
+
+  useEffect(() => {
+    setActiveStep(1);
+    setFromLPToken(null);
+    setToLPToken(null);
+    setLpAddingSuccess(false);
+    setFromLPTokenInputAmount("");
+    setToLPTokenInputAmount("");
+    setFeeTier("0.3");
+    setTickSpace(60);
+    setActivePriceRange(0);
+    setTickLowerPrice("0");
+    setTickUpperPrice("0");
+    setFromToken(null);
+    setToToken(null);
+    setFromTokenBalance("");
+    setToTokenInputAmount("");
+    setFromTokenInputAmount("");
+    setToTokenBalance("");
+  }, []);
+  return (
+    <div>
+      <div className="fixed top-0 left-0 right-0 z-20 bg-gradient-to-b from-black">
+        <div className="container ">
+          <Navbar />
+        </div>
+      </div>
+      {/* <HomeBg /> */}
+      <div className="container mx-auto mt-10 xl:mt-20">
+        <div className="pt-0.5">
+          <div className="flex justify-center items-center my-2 w-full ">
+            <div className="flex flex-row justify-center w-full p-3 py-5 rounded-xl ">
+              <Tabs
+                value={activeTab}
+                onValueChange={handleTabChange}
+                className="  bg-transparent space-y-5"
+              >
+                <TabsList className="flex justify-center items-center mx-auto bg-black/10 dark:bg-white/5 w-full  md:w-[550px] rounded-xl h-[48px] ">
+                  <TabsTrigger
+                    value="trade"
+                    className="w-full font-formula  h-[40px] navbar-text uppercase flex justify-center items-center"
+                  >
+                    Swap
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="lp"
+                    className="w-full font-formula h-[40px] navbar-text uppercase flex justify-center items-center"
+                  >
+                    Add Liquidity
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="pool"
+                    className="w-full font-formula h-[40px] navbar-text uppercase flex justify-center items-center"
+                  >
+                    Pools
+                  </TabsTrigger>
+                </TabsList>
+                <TabsContent value="trade" className="mt-[-1px] py-2">
+                  <div className="flex flex-row w-full gap-4">
+                    {/* <EmbedChart /> */}
+                    <Suspense
+                      fallback={
+                        <div className="flex justify-center items-center p-8">
+                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary" />
+                        </div>
+                      }
+                    >
+                      <SwapWidget />
+                    </Suspense>
+                  </div>
+                </TabsContent>
+                <TabsContent value="lp" className="mt-[-1px] py-2 ">
+                  <LPView />
+                </TabsContent>
+                <TabsContent value="pool" className="mt-[-1px] py-2 ">
+                  <Suspense
+                    fallback={
+                      <div className="flex justify-center items-center p-8">
+                        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                      </div>
+                    }
+                  >
+                    <PoolsView />
+                  </Suspense>
+                </TabsContent>
+              </Tabs>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

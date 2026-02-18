@@ -1,0 +1,502 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* --primary: 180,81%,44%; */
+  --primary: 74 91% 42%;
+}
+
+/* .dark {
+  --primary: 180,100%,50%;
+} */
+
+.dark {
+  --primary: 73 99% 52%;
+  /* --primary: #c2fe0c; */
+}
+
+body {
+  @apply font-lato bg-[#F7FAFC] dark:bg-black;
+  overscroll-behavior: none;
+}
+
+/* Remove arrow on number input For most browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove arrow on number input For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.ql-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+@layer utilities {
+  .header {
+    @apply sticky z-20 top-0 flex items-center justify-between py-3;
+  }
+
+  .card-primary {
+    @apply dark:bg-[#121212] bg-slate-100 border border-black/10 dark:border-[rgba(255,255,255,0.03)];
+  }
+
+  .button-primary {
+    @apply text-sm font-formula rounded-full bg-primary button-text text-black transition-all duration-500 hover:bg-transparent hover:ring-2 hover:ring-inset hover:ring-primary hover:text-primary;
+  }
+
+  .button-danger {
+    @apply rounded-[12px] bg-red button-text text-white transition-all duration-500 hover:bg-transparent hover:ring-2 hover:ring-inset hover:ring-red hover:text-red;
+  }
+
+  .button-range {
+    @apply rounded-[12px] bg-black/5 dark:bg-white/5 ring-1 ring-black/5 dark:ring-white/5 active:bg-primary focus:bg-primary button-text text-black dark:text-white transition-all duration-500 hover:bg-primary hover:ring-inset hover:ring-primary dark:hover:text-black;
+  }
+
+  .button-text {
+    @apply text-[14px] font-lato leading-[16.8px] font-normal uppercase tracking-normal;
+  }
+
+  .button-secondary {
+    @apply bg-primary/20 rounded-sm text-primary hover:bg-primary/30 transition-colors duration-300;
+  }
+
+  .navbar-text {
+    @apply text-[16px] md:text-[18px] font-formula font-normal;
+  }
+
+  .title-small-semi-bold {
+    @apply text-[12px] md:text-[14px] font-formula leading-[16.8px] tracking-tight text-primary font-normal;
+  }
+
+  .title-regular-bold {
+    @apply text-[18px] md:text-[22px] font-formula leading-[26.4px] tracking-tight text-primary font-normal;
+  }
+
+  .title-regular-semi-bold {
+    @apply text-[18px] md:text-[22px] font-formula leading-[29.95px] tracking-tight text-primary font-normal;
+  }
+
+  .title-large-semi-bold {
+    @apply text-[36px] md:text-[40px] font-formula leading-tight tracking-tight text-primary font-normal;
+  }
+
+  .title-xl-bold {
+    @apply text-xl sm:text-4xl font-formula leading-[40px] tracking-tight font-normal;
+  }
+
+  .user-profile-menu-action-text {
+    @apply text-xs text-primary transition-colors duration-300 hover:text-primary/80 cursor-pointer;
+  }
+
+  .announcement-alert {
+    @apply bg-primary/10 border-none;
+  }
+
+  .title-underline {
+    @apply w-10 border-none bg-primary h-[4px] mt-1;
+  }
+
+  .score-button {
+    @apply border-[2.63px] border-primary rounded-full aspect-[1/1] min-w-[60px] min-h-[60px] score-button-shadow score-button-bg;
+  }
+
+  .input-primary {
+    @apply w-full bg-white dark:bg-[#222222] border-none rounded-sm ring-1 ring-black ring-opacity-10 dark:ring-white dark:ring-opacity-10 focus:ring-1 focus:ring-primary transition-all duration-100;
+  }
+
+  .shad-otp {
+    @apply w-full flex justify-between important;
+  }
+
+  .shad-otp-slot {
+    @apply title-regular-bold justify-center border-none ring-1 ring-inset bg-white dark:bg-dark ring-black/5 dark:ring-white/20 flex rounded-sm md:rounded-md size-12 md:size-16 gap-2 important font-normal;
+  }
+
+  /* =====  REACT DATE PICKER OVERRIDES */
+  .date-picker {
+    @apply overflow-hidden border-transparent w-full placeholder:text-slate rounded-md px-3 outline-none important;
+  }
+
+  .file-upload {
+    @apply flex cursor-pointer flex-col items-center justify-center gap-3 bg-[#222222] border-none rounded-sm ring-1 ring-white ring-opacity-10 focus:ring-1 focus:ring-primary transition-all duration-100 p-5;
+  }
+
+  .file-upload_label {
+    @apply flex flex-col justify-center gap-2 text-center;
+  }
+}
+
+/* =====  REACT-DATEPICKER OVERRIDES */
+.react-datepicker-wrapper.date-picker {
+  display: flex;
+  align-items: center;
+}
+
+.react-datepicker,
+.react-datepicker__time,
+.react-datepicker__header,
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker-time__header {
+  background-color: #1a1d21 important;
+  border-color: #363a3d important;
+  color: #abb8c4 important;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker-time__header {
+  color: #ffffff important;
+}
+
+.react-datepicker__triangle {
+  fill: #1a1d21 important;
+  color: #1a1d21 important;
+  stroke: #1a1d21 important;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: #363a3d important;
+}
+
+.react-datepicker__input-container input {
+  background-color: #1a1d21 important;
+  width: 100%;
+  outline: none;
+}
+
+.react-datepicker__day--selected {
+  background-color: #24ae7c important;
+  color: #ffffff important;
+  border-radius: 4px;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #24ae7c important;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid #363a3d important;
+}
+
+.react-datepicker__time-list-item {
+  display: flex important;
+  align-items: center important;
+}
+
+.score-button-shadow {
+  box-shadow: 0px 0px 34.97px 0px rgba(0, 255, 255, 0.5);
+  box-shadow: 0px 0px 17.48px 0px rgba(0, 255, 255, 1);
+}
+
+.score-button-bg {
+  background: radial-gradient(70.71% 70.71% at 50% 50%,
+      rgba(0, 255, 255, 0.8) 0%,
+      rgba(0, 80, 80, 0.5) 100%);
+}
+
+.shadow-primary-text {
+  text-shadow: 0px 0px 10px #00ffff important;
+}
+
+.marquee-left {
+  background: linear-gradient(270deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%);
+}
+
+.marquee-right {
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%);
+}
+
+.gradient-top {
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 1%,
+      rgba(0, 0, 0, 1) 100%);
+}
+
+.nft-shadow-bronze {
+  -webkit-box-shadow: 0px 70px 300px -50px rgba(187, 124, 69, 0.4);
+  -moz-box-shadow: 0px 70px 300px -50px rgba(187, 124, 69, 0.4);
+  box-shadow: 0px 70px 300px -50px rgba(187, 124, 69, 0.4);
+}
+
+.nft-shadow-silver {
+  -webkit-box-shadow: 0px 70px 300px -50px rgba(205, 205, 205, 0.3);
+  -moz-box-shadow: 0px 70px 300px -50px rgba(205, 205, 205, 0.3);
+  box-shadow: 0px 70px 300px -50px rgba(205, 205, 205, 0.3);
+}
+
+.nft-shadow-gold {
+  -webkit-box-shadow: 0px 70px 300px -50px rgba(253, 172, 15, 0.3);
+  -moz-box-shadow: 0px 70px 300px -50px rgba(253, 172, 15, 0.3);
+  box-shadow: 0px 70px 300px -50px rgba(253, 172, 15, 0.3);
+}
+
+.nft-shadow-diamond {
+  -webkit-box-shadow: 0px 70px 300px -50px rgba(152, 42, 200, 0.5);
+  -moz-box-shadow: 0px 70px 300px -50px rgba(152, 42, 200, 0.5);
+  box-shadow: 0px 70px 300px -50px rgba(152, 42, 200, 0.5);
+}
+
+.nft-shadow-black {
+  -webkit-box-shadow: 0px 70px 300px -50px rgba(86, 86, 86, 0.7);
+  -moz-box-shadow: 0px 70px 300px -50px rgba(86, 86, 86, 0.7);
+  box-shadow: 0px 70px 300px -50px rgba(86, 86, 86, 0.7);
+}
+
+@media (max-width: 1024px) {
+  .nft-shadow-bronze {
+    -webkit-box-shadow: 0px 70px 300px -50px rgba(187, 124, 69, 0.9);
+    -moz-box-shadow: 0px 70px 300px -50px rgba(187, 124, 69, 0.9);
+    box-shadow: 0px 70px 300px -50px rgba(187, 124, 69, 0.9);
+  }
+
+  .nft-shadow-silver {
+    -webkit-box-shadow: 0px 70px 300px -50px rgba(205, 205, 205, 0.9);
+    -moz-box-shadow: 0px 70px 300px -50px rgba(205, 205, 205, 0.9);
+    box-shadow: 0px 70px 300px -50px rgba(205, 205, 205, 0.9);
+  }
+
+  .nft-shadow-gold {
+    -webkit-box-shadow: 0px 70px 300px -50px rgba(253, 172, 15, 0.9);
+    -moz-box-shadow: 0px 70px 300px -50px rgba(253, 172, 15, 0.9);
+    box-shadow: 0px 70px 300px -50px rgba(253, 172, 15, 0.9);
+  }
+
+  .nft-shadow-diamond {
+    -webkit-box-shadow: 0px 70px 300px -50px rgba(152, 42, 200, 0.9);
+    -moz-box-shadow: 0px 70px 300px -50px rgba(152, 42, 200, 0.9);
+    box-shadow: 0px 70px 300px -50px rgba(152, 42, 200, 0.9);
+  }
+
+  .nft-shadow-black {
+    -webkit-box-shadow: 0px 70px 300px -50px rgba(86, 86, 86, 0.9);
+    -moz-box-shadow: 0px 70px 300px -50px rgba(86, 86, 86, 0.9);
+    box-shadow: 0px 70px 300px -50px rgba(86, 86, 86, 0.9);
+  }
+}
+
+@layer base {
+  :root {
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* RainbowKit Modal Fixes */
+[data-rk] {
+  z-index: 9999 important;
+}
+
+[data-rk] [data-rk] {
+  z-index: 10000 important;
+}
+
+/* Ensure RainbowKit modals don't block interactions */
+[data-rk] * {
+  pointer-events: auto important;
+}
+
+/* Fix for RainbowKit modal backdrop */
+[data-rk]>div[role="dialog"] {
+  z-index: 10001 important;
+}
+
+/* Ensure click events work properly in RainbowKit modals */
+[data-rk] button,
+[data-rk] [role="button"],
+[data-rk] a {
+  pointer-events: auto important;
+  cursor: pointer important;
+}
+
+/* Additional fixes for RainbowKit modal interactions */
+[data-rk] [role="dialog"] {
+  pointer-events: auto important;
+}
+
+[data-rk] [role="dialog"] * {
+  pointer-events: auto important;
+}
+
+/* Fix for modal overlay blocking interactions */
+[data-rk]>div[style*="position: fixed"] {
+  pointer-events: auto important;
+}
+
+/* Ensure all interactive elements in RainbowKit modals work */
+[data-rk] input,
+[data-rk] select,
+[data-rk] textarea,
+[data-rk] [tabindex] {
+  pointer-events: auto important;
+}
+
+.rdp-chevron {
+  fill: #ffffff;
+}
+
+.rdp-button_previous {
+  position: absolute;
+  left: 0;
+}
+
+.rdp-button_next {
+  position: absolute;
+  right: 0;
+}
+
+.rdp-month_caption {
+  display: flex;
+  justify-content: center;
+}
+
+.rdp-weekdays {
+  color: #a1a1aa;
+}
+
+.rdp-outside>.rdp-day_button {
+  @apply text-gray-400 dark:text-[#fafafa92];
+}
+
+.rdp-disabled>button {
+  /* color: #fafafa92 important; */
+  @apply hover:bg-transparent hover:border-none text-gray-400 dark:text-[#fafafa92];
+}
+
+.rdp-day_button {
+  @apply w-full h-full hover:bg-gray-500/50 hover:border hover:border-gray-500 hover:rounded-sm;
+}
+
+td {
+  @apply text-center;
+}
+
+.transparent-button {
+  background-color: transparent;
+  /* color: white; */
+  padding: 8px 16px;
+  font-family: Barlow Condensed, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: normal;
+  transition: all 0.2s ease;
+  height: var(--button-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cyan-button:hover {
+  background-color: #00ffffe1;
+}
+
+.cyan-button {
+  /* color: black; */
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 14px;
+  letter-spacing: normal;
+  transition: all 0.2s ease;
+  height: var(--button-height);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cyan-button,
+.transparent-button span {
+  font-family: Barlow Condensed, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.corner-border {
+  position: relative;
+}
+
+.corner-border::before,
+.corner-border::after,
+.corner-border .corner-top-right,
+.corner-border .corner-bottom-left {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1px solid;
+  border-color: rgb(247 247 247 / 98%);
+  /* Light theme default */
+}
+
+.dark .corner-border::before,
+.dark .corner-border::after,
+.dark .corner-border .corner-top-right,
+.dark .corner-border .corner-bottom-left {
+  border-color: #3d3d3d;
+  /* Dark theme */
+}
+
+/* Top-left corner */
+.corner-border::before {
+  top: 0;
+  left: 0;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0.75rem 0 0 0;
+}
+
+/* Bottom-right corner */
+.corner-border::after {
+  bottom: 0;
+  right: 0;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 0.75rem 0;
+}
+
+/* Top-right corner */
+.corner-border .corner-top-right {
+  top: 0;
+  right: 0;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 0.75rem 0 0;
+}
+
+/* Bottom-left corner */
+.corner-border .corner-bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+  border-radius: 0 0 0 0.75rem;
+}
