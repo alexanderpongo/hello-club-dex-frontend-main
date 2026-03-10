@@ -36,6 +36,7 @@ import { useNewIncreaseLpStore } from "@/store/new-increase-lp.store";
 import { useAccount } from "wagmi";
 import { useLockStore } from "@/store/useLockStore";
 import SwitchNetworkButton from "@/components/trading-live-inner/SwitchNetworkButton";
+import { YieldGrowthChart } from "./YieldGrowthChart";
 
 interface RangeData {
   minPrice: number;
@@ -558,8 +559,8 @@ const PositionsInnerView: React.FC<PositionsInnerViewProps> = (props) => {
             </div>
             <div
               className={`${positionData.performance.pnl.net_pnl_usd > 0
-                  ? "text-primary"
-                  : "text-[#f87171]"
+                ? "text-primary"
+                : "text-[#f87171]"
                 }`}
             >
               {positionData.performance.pnl.net_pnl_usd > 0 ? "+" : ""}
@@ -821,6 +822,20 @@ const PositionsInnerView: React.FC<PositionsInnerViewProps> = (props) => {
           </div>
         </div>
       </div>
+
+      {/* Yield Growth Section */}
+      <div className="dark:bg-[#121212] bg-white border border-black/10 dark:border-[rgba(255,255,255,0.03)] rounded-xl p-6 mt-3">
+        <div className="flex flex-col space-y-1 mb-4">
+          <div className="text-xl dark:text-white text-black uppercase font-formula">
+            Yield History
+          </div>
+          <div className="text-sm text-gray-400 font-lato">
+            Daily yield accumulation trend
+          </div>
+        </div>
+        <YieldGrowthChart />
+      </div>
+
       {/* transaction table */}
       <div className="dark:bg-[#0F0F0F] bg-slate-100 shadow border border-[rgba(255,255,255,0.08)] rounded-md p-5 w-full mt-3 space-y-4">
         <div className="flex justify-between w-full items-center">

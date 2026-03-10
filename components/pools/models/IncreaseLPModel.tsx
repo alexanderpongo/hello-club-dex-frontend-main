@@ -130,7 +130,7 @@ const IncreaseLpModel: React.FC<IncreaseLpModelProps> = (props) => {
 
     // Check fromLPToken allowance (skip if native)
     if (
-      fromLPToken &&
+      fromLPToken?.address &&
       fromLPToken.address.toLowerCase() !== "native" &&
       fromLPToken.address.toLowerCase() !== wrappedNativeAddress.toLowerCase()
     ) {
@@ -155,7 +155,7 @@ const IncreaseLpModel: React.FC<IncreaseLpModelProps> = (props) => {
 
     // Check toLPToken allowance (skip if native)
     if (
-      toLPToken &&
+      toLPToken?.address &&
       toLPToken.address.toLowerCase() !== "native" &&
       toLPToken.address.toLowerCase() !== wrappedNativeAddress.toLowerCase()
     ) {

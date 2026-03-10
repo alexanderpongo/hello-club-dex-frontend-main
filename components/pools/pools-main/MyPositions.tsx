@@ -18,6 +18,7 @@ import { chains } from "@/config/chains";
 import PositionsTable from "@/components/pools/pools-main/table/positions-table/PositionsTable";
 import CommonCard from "../CommonCard";
 import { TrendingUp, Zap, Users, Flame } from "lucide-react";
+import PortfolioYieldGrowth from "./PortfolioYieldGrowth";
 
 const MyPositions = () => {
   const baseURL = process.env.NEXT_PUBLIC_TRADING_LIVE_BASE_API;
@@ -207,6 +208,9 @@ const MyPositions = () => {
           value={`$${claimableYield.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`}
         />
       </div>
+
+      <PortfolioYieldGrowth />
+
       <div className="dark:bg-[#121212] bg-slate-100  border border-[rgba(255,255,255,0.03)] rounded-xl overflow-hidden">
         {/* Spacer to match AllPools filter bar height and spacing */}
         <div className="">

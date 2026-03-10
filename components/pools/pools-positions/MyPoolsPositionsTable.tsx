@@ -23,6 +23,7 @@ import APR from "@/components/pools/pools-positions/my-pools-positions-table-com
 import PriceRangeComp from "@/components/pools/pools-positions/my-pools-positions-table-comp/PriceRange";
 import PNL from "./my-pools-positions-table-comp/PNL";
 import APRHeader from "./my-pools-positions-table-comp/APRHeader";
+import { YieldSparkline } from "./my-pools-positions-table-comp/YieldSparkline";
 
 interface MyPoolsPositionsTableProps {
   tableData: AdjustedPosition[];
@@ -81,6 +82,11 @@ const columns: ColumnDef<AdjustedPosition>[] = [
     cell: ({ row }) => (
       <PriceRangeComp price_range={row.original.price_range} />
     ),
+  },
+  {
+    accessorKey: "yield_trend",
+    header: () => <div className="text-right uppercase">Trend</div>,
+    cell: () => <YieldSparkline />,
   },
 ];
 
